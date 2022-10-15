@@ -1,0 +1,32 @@
+
+<nav class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="#"> Busquedas de Enlaces Web </a>
+</nav>
+
+
+<div class="container p-5">
+  <div class="row">
+
+    <div class="col-md-8 offset-md-2">
+      <div class="card">
+        <form class="card-body">
+          <h3 class="card-title">Agregar Link</h3>
+          <label for="title">Titulo</label>
+          <input type="text" name="title" #newtitle class="form-control" autofocus>
+
+          <label for="link">Link</label>
+          <input type="text" name="link" #newlink class="form-control">
+
+          <button (click)="addLink(newtitle, newlink)" class="btn btn-primary btn-block mt-5">
+            Buscar Enlace
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <app-link *ngFor="let link of sortedLinks()" [link]="link"></app-link>
+</div>
+
+
+
